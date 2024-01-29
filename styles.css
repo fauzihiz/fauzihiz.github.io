@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #000;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #fff; /* Border styling */
+    border-radius: 10px; /* Rounded corners */
+    position: relative;
+}
+
+section p {
+    font-size: 18px;
+}
+
+/* Portfolio Project Cards */
+.project-card {
+    border: 1px solid #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease; /* Add animation to the cards */
+}
+
+.project-card:hover {
+    background-color: #333; /* Change background on hover */
+}
+
+/* Skills Progress Bars */
+.skill-bar {
+    background-color: #333;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.skill-fill {
+    height: 100%;
+    background-color: #f00; /* Red fill color */
+    border-radius: 10px;
+    transition: width 0.5s ease; /* Add animation to the progress */
+}
+
+/* Contact Form */
+.contact-form {
+    text-align: left;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease; /* Add animation to the icons */
+}
+
+.icon:hover {
+    color: #f00; /* Change color on hover */
+}
