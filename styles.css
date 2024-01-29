@@ -1,85 +1,110 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: #fff;
     margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
 }
 
 header {
-    background-color: #000;
-    padding: 20px;
     text-align: center;
-}
-
-h1 {
+    padding: 20px;
+    background-color: #333;
     color: #fff;
 }
 
-.container {
-    max-width: 90%;
-    margin: 0 auto;
-}
-
 section {
-    background-color: #000;
-    padding: 40px 0;
-    text-align: center;
-    margin-bottom: 20px;
-    border: 2px solid #fff; /* Border styling */
-    border-radius: 10px; /* Rounded corners */
-    position: relative;
-}
-
-section p {
-    font-size: 18px;
-}
-
-/* Portfolio Project Cards */
-.project-card {
-    border: 1px solid #fff;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease; /* Add animation to the cards */
+    border: 1px solid #ddd;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #e74c3c; /* Red accent for section titles */
+    padding-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .project-card:hover {
-    background-color: #333; /* Change background on hover */
+    transform: scale(1.05);
+    border: 1px solid #e74c3c; /* Red border on hover */
 }
 
-/* Skills Progress Bars */
+a {
+    text-decoration: none;
+    color: #333;
+    background-color: #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+a:hover {
+    background-color: #e74c3c; /* Red hover effect */
+    color: #fff;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
 .skill-bar {
-    background-color: #333;
+    background-color: #ddd;
     height: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .skill-fill {
     height: 100%;
-    background-color: #f00; /* Red fill color */
-    border-radius: 10px;
-    transition: width 0.5s ease; /* Add animation to the progress */
+    width: 60%; /* Adjust this value based on skill level */
+    background-color: #e74c3c; /* Red fill for progress bar */
+    border-radius: 5px;
 }
 
-/* Contact Form */
-.contact-form {
-    text-align: left;
+.skill-fill-js {
+    height: 100%;
+    width: 25%; /* Adjust this value based on skill level */
+    background-color: #e74c3c; /* Red fill for progress bar */
+    border-radius: 5px;
 }
 
-/* Social Media Icons */
-.social-icons {
-    display: flex;
-    justify-content: center;
+.skill-fill-tailwind {
+    height: 100%;
+    width: 10%; /* Adjust this value based on skill level */
+    background-color: #e74c3c; /* Red fill for progress bar */
+    border-radius: 5px;
 }
 
-.icon {
+#contact a {
+    text-decoration: none;
     color: #fff;
-    margin: 0 10px;
-    font-size: 24px;
-    transition: color 0.3s ease; /* Add animation to the icons */
+    background-color: #e74c3c; /* Red background for contact link */
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.icon:hover {
-    color: #f00; /* Change color on hover */
+#contact a:hover {
+    background-color: #333;
 }
