@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Optional parameters
       direction: 'horizontal',
       loop: true,
+      effect: 'slide',
+      speed: 600,
       
       // If you need pagination
       pagination: {
@@ -11,4 +13,3 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     });
   });
-

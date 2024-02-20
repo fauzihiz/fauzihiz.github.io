@@ -128,14 +128,34 @@ body {
     margin-right: auto;
     margin-top: 20px;
 }
-
-.swiper-slide img {
-    max-width: 100%;
+/* Add styles to make the container fill the viewport */
+.swiper-container {
+    width: 350px;
+    height: 550px;
+    background-color: #E6E6E6;
     position: relative;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    height: auto;
+    
+}
+/* Style the slide containers */
+.swiper-slide {
+    
+  }
+  
+  /* Add blur effect to non-focused containers */
+  .swiper-slide:not(.swiper-slide-active) {
+    filter: blur(5px); /* Adjust the blur amount as needed */
+  }
+.swiper-slide img {
     cursor: pointer;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
   }
 footer {
         position: relative;
