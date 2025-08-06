@@ -1,83 +1,423 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-        <title>Fauzi Hizbullah - Web Dev</title>
-        <link rel="icon" type="image/x-icon" href="images\favicon\favicon.ico">
+    <title>Fauzi Hizbullah - Web Developer</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-        <link rel="stylesheet" href="style.css">
-        <!-- Swiper CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-        <!-- Google Font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
-    </head>
+<body>
+    <!-- Particle Background -->
+    <div class="particles-container">
+        <canvas id="particles-canvas"></canvas>
+    </div>
 
-    <body>
-        <a href="#" id="back-to-top" title="Back to Top">^</a>
-
-            <div id="about" class="about">
-                <img class="image" src="images/fauzi_hizbullah_personal_logo.jpg" alt="Fauzi Hizbullah Personal Logo">
-                <div class="text merriweather-regular">
-                    Step into <b>Fauzi Hizbullah</b>'s digital universe—where web and game development converge in a symphony of innovation! Ready to be inspired? Dive in!
-                </div>
-            </div>
-            
-            <div id="contacts" class="contacts">
-                <div class="top_row">
-                    <a href="https://wa.me/6287718835567" target="_blank" rel="noopener noreferrer"><img id="wa-icon" class="socmed_icon" src="images/whatsapp.png" alt="whatsapp icons"></a>
-                    <a href="mailto:fauzihiz@gmail.com" target="_blank" rel="noopener noreferrer"><img id="email-icon" class="socmed_icon" src="images/email.png" alt="email icons"></a>
-                    <a href="https://linkedin.com/in/fauzi-hizbullah-5893a5180" target="_blank" rel="noopener noreferrer"><img id="linkedin-icon" class="socmed_icon" src="images/linkedin.png" alt="linkedin icons"></a>
-                </div>
-                <div class="bot_row">
-                    <a href="https://discordapp.com/users/fauzihiz" target="_blank" rel="noopener noreferrer"><img id="discord-icon" class="socmed_icon" src="images/discord.png" alt="discord icons"></a>
-                    <a href="https://linkedin.com/in/fauzi-hizbullah-5893a5180" target="_blank" rel="noopener noreferrer"><img id="x-icon" class="socmed_icon" src="images/twitter.png" alt="x twitter icons"></a>
-                </div>
-            </div>
-            
-            <div id="portfolio" class="portfolio">
-                <!-- Swiper HTML -->
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/portfolio/resume-kajian.jpg" loading="lazy" alt="resume-kajian"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-02.jpg" loading="lazy" alt="Portfolio 02"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-03.jpg" loading="lazy" alt="Portfolio 03"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-04.jpg" loading="lazy" alt="Portfolio 04"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-05.jpg" loading="lazy" alt="Portfolio 05"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-06.jpg" loading="lazy" alt="Portfolio 06"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-07.jpg" loading="lazy" alt="Portfolio 07"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-08.jpg" loading="lazy" alt="Portfolio 08"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-09.jpg" loading="lazy" alt="Portfolio 09"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-10.jpg" loading="lazy" alt="Portfolio 10"></div>
-                    <div class="swiper-slide"><img src="images/portfolio/portfolio-11.jpg" loading="lazy" alt="Portfolio 11"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <div class="coffee-steam">
+                        <span class="steam-line"></span>
+                        <span class="steam-line"></span>
+                        <span class="steam-line"></span>
                     </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="coffee-cup">
+                        <span class="code-bracket">&lt;/&gt;</span>
+                    </div>
+                </div>
+                <span class="logo-text">FH</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="typing-container">
+                        <h1 class="hero-title">
+                            <span class="greeting">Hi, I'm</span>
+                            <span class="name">Fauzi Hizbullah</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            <span class="typing-text" data-text="Aspiring Web Developer"></span>
+                            <span class="cursor">|</span>
+                        </p>
+                    </div>
+                    <p class="hero-description">
+                        Crafting digital solutions with <span class="highlight">&lt;React/&gt;</span> and <span class="highlight">Node.js</span>. 
+                        Fresh bootcamp graduate turning coffee into code and problems into solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="btn-icon">→</i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="btn-icon">📧</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-editor">
+                        <div class="editor-header">
+                            <div class="editor-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="editor-title">portfolio.js</span>
+                        </div>
+                        <div class="editor-content">
+                            <pre class="code-lines">
+<span class="line-number">1</span><span class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</span>
+<span class="line-number">2</span><span class="code-line">  <span class="property">name</span>: <span class="string">"Fauzi Hizbullah"</span>,</span>
+<span class="line-number">3</span><span class="code-line">  <span class="property">role</span>: <span class="string">"Web Developer"</span>,</span>
+<span class="line-number">4</span><span class="code-line">  <span class="property">skills</span>: [<span class="string">"React"</span>, <span class="string">"Node.js"</span>],</span>
+<span class="line-number">5</span><span class="code-line">  <span class="property">passion</span>: <span class="string">"Problem Solving"</span>,</span>
+<span class="line-number">6</span><span class="code-line">  <span class="property">coffee</span>: <span class="boolean">true</span></span>
+<span class="line-number">7</span><span class="code-line">};</span>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-icon" data-delay="0s">⚛️</div>
+                        <div class="floating-icon" data-delay="0.5s">🟢</div>
+                        <div class="floating-icon" data-delay="1s">📜</div>
+                        <div class="floating-icon" data-delay="1.5s">☕</div>
+                    </div>
                 </div>
             </div>
-        
-        <!-- Swiper JavaScript -->
-        <script src="index.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    </body>
-
-    <footer class="merriweather-regular">
-        @fauzihiz - 2024
-        <a href="#" id="credit-link">Credit</a>
-        <div id="credit-box">
-          <div id="credit-content">
-            <a href="https://www.flaticon.com/free-icons/whatsapp" title="whatsapp icons">Whatsapp icons created by Freepik - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by rukanicon - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/discord" title="discord icons">Discord icons created by Freepik - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/brands-and-logotypes" title="brands and logotypes icons">Brands and logotypes icons created by Freepik - Flaticon</a>
-
-          </div>
         </div>
-      </footer>
-    
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about creating digital solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <div class="card-icon">🎯</div>
+                            <h3>Mission</h3>
+                            <p>Learning to solve daily problems with digital solutions and benefit others through innovative web development.</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon">🎓</div>
+                            <h3>Education</h3>
+                            <p>Fresh Dicoding Bootcamp graduate with hands-on experience in modern web technologies and best practices.</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon">🚀</div>
+                            <h3>Goal</h3>
+                            <p>Currently building projects and aiming to land my first freelance opportunities on multiple platforms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="1">0</div>
+                        <div class="stat-label">Years Learning</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="6">0</div>
+                        <div class="stat-label">Projects Built</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-label">Cups of Coffee</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="24">0</div>
+                        <div class="stat-label">Hours Coding/Day</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="React">
+                            <div class="skill-icon">⚛️</div>
+                            <span class="skill-name">React</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="JavaScript">
+                            <div class="skill-icon">🟡</div>
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="HTML5">
+                            <div class="skill-icon">🧡</div>
+                            <span class="skill-name">HTML5</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="CSS3">
+                            <div class="skill-icon">🔵</div>
+                            <span class="skill-name">CSS3</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="category-title">Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item" data-skill="Node.js">
+                            <div class="skill-icon">🟢</div>
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="Hapi.js">
+                            <div class="skill-icon">🔥</div>
+                            <span class="skill-name">Hapi.js</span>
+                            <div class="skill-level">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Things I've built with ❤️ and ☕</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <img src="images/portfolio/resume-kajian.jpg" alt="Resume Kajian App">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/fauzihiz/resume-kajian" class="project-link" target="_blank">
+                                    <span>Code</span>
+                                    <i>→</i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <span>Live</span>
+                                    <i>↗</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Resume Kajian App</h3>
+                            <span class="project-status">Featured</span>
+                        </div>
+                        <p class="project-description">
+                            A comprehensive study resume application built with vanilla JavaScript, featuring modern UI/UX design and responsive layout.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/portfolio/portfolio-02.jpg" alt="Book Reading Tracker">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/fauzihiz" class="project-link" target="_blank">
+                                    <span>Code</span>
+                                    <i>→</i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <span>Live</span>
+                                    <i>↗</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Book Reading Tracker</h3>
+                        <p class="project-description">
+                            Personal project for my wife to track reading progress with React and modern state management.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/portfolio/portfolio-03.jpg" alt="API Project">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/fauzihiz" class="project-link" target="_blank">
+                                    <span>Code</span>
+                                    <i>→</i>
+                                </a>
+                                <a href="#" class="project-link" target="_blank">
+                                    <span>Live</span>
+                                    <i>↗</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">RESTful API Service</h3>
+                        <p class="project-description">
+                            Scalable backend service built with Hapi.js, featuring authentication and database integration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Hapi.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p class="contact-description">
+                        Ready to turn your ideas into reality? Let's grab a virtual coffee and discuss your project!
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:fauzihiz@gmail.com" class="contact-value">fauzihiz@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-details">
+                                <span class="contact-label">WhatsApp</span>
+                                <a href="https://wa.me/6287718835567" class="contact-value">+62 877 1883 5567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Sawangan, West Java, ID</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <h3>Find Me Online</h3>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/fauzi-hizbullah-5893a5180" class="social-link linkedin" target="_blank">
+                            <span class="social-icon">💼</span>
+                            <span class="social-text">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/fauzihiz" class="social-link github" target="_blank">
+                            <span class="social-icon">👨‍💻</span>
+                            <span class="social-text">GitHub</span>
+                        </a>
+                        <a href="https://codepen.io/fauzihiz" class="social-link codepen" target="_blank">
+                            <span class="social-icon">🖊️</span>
+                            <span class="social-text">CodePen</span>
+                        </a>
+                        <a href="https://discordapp.com/users/fauzihiz" class="social-link discord" target="_blank">
+                            <span class="social-icon">🎮</span>
+                            <span class="social-text">Discord</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <div class="coffee-steam">
+                            <span class="steam-line"></span>
+                            <span class="steam-line"></span>
+                            <span class="steam-line"></span>
+                        </div>
+                        <div class="coffee-cup">
+                            <span class="code-bracket">&lt;/&gt;</span>
+                        </div>
+                    </div>
+                    <span class="logo-text">Fauzi Hizbullah</span>
+                </div>
+                <div class="footer-text">
+                    <p>© 2024 Fauzi Hizbullah. Crafted with ☕ and &lt;/&gt;</p>
+                    <p>Turning coffee into code, one cup at a time.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <span>↑</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
 </html>
