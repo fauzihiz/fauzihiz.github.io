@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTypingEffect();
     initializeScrollAnimations();
     initializeNavigation();
-    initializeSkillsAnimation();
     initializeStatsCounter();
     initializeBackToTop();
     initializeSmoothScrolling();
@@ -258,28 +257,6 @@ function initializeNavigation() {
     });
 }
 
-// ===== SKILLS ANIMATION =====
-function initializeSkillsAnimation() {
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target.querySelector('.skill-progress');
-                const width = progressBar.getAttribute('data-width');
-                
-                setTimeout(() => {
-                    progressBar.style.width = width;
-                }, 300);
-                
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    document.querySelectorAll('.skill-item').forEach(item => {
-        skillObserver.observe(item);
-    });
-}
-
 // ===== STATS COUNTER =====
 function initializeStatsCounter() {
     const statsObserver = new IntersectionObserver((entries) => {
@@ -288,27 +265,32 @@ function initializeStatsCounter() {
                 const counters = entry.target.querySelectorAll('.stat-number');
                 
                 counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-count'));
+                    const target = parseFloat(counter.getAttribute('data-count'));
                     const duration = 2000;
-                    const stepTime = Math.abs(Math.floor(duration / target));
                     let current = 0;
                     
+                    const increment = target / 50;
                     const timer = setInterval(() => {
-                        current += Math.ceil(target / 50);
+                        current += increment;
                         if (current >= target) {
                             current = target;
                             clearInterval(timer);
                         }
                         
-                        counter.textContent = current;
+                        // Handle decimal numbers
+                        if (target === 1.5) {
+                            counter.textContent = current.toFixed(1);
+                        } else {
+                            counter.textContent = Math.ceil(current);
+                        }
                         
                         // Add special formatting for certain stats
-                        if (target === 24) {
-                            counter.textContent = current + '/7';
-                        } else if (target === 100) {
-                            counter.textContent = current + '+';
+                        if (target === 100) {
+                            counter.textContent = Math.ceil(current) + '+';
+                        } else if (target === 500) {
+                            counter.textContent = Math.ceil(current) + '+';
                         }
-                    }, stepTime);
+                    }, duration / 50);
                 });
                 
                 statsObserver.unobserve(entry.target);
@@ -585,7 +567,6 @@ if (typeof module !== 'undefined' && module.exports) {
         initializeTypingEffect,
         initializeScrollAnimations,
         initializeNavigation,
-        initializeSkillsAnimation,
         initializeStatsCounter,
         initializeBackToTop,
         initializeSmoothScrolling
